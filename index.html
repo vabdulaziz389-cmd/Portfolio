@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#0f1526">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdulaziz Voxidov — IT dasturchi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef1f6; --ink:#14213d; --muted:#55627c; --line:#c9d1e0; --card:#ffffff;
+  --accent:#2c4bff; --mark:#ffe14d; --on-accent:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){color-scheme:dark;--bg:#0f1526;--ink:#e8ecf7;--muted:#9aa6c2;--line:#27314d;--card:#161d33;--accent:#7f95ff;--mark:#ffe14d;--on-accent:#0f1526}
+}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0f1526;--ink:#e8ecf7;--muted:#9aa6c2;--line:#27314d;--card:#161d33;--accent:#7f95ff;--mark:#ffe14d;--on-accent:#0f1526}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 110px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;background:var(--bg);opacity:.82;z-index:-1}
+main{max-width:860px;margin:0 auto;padding:0 22px 80px}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.05;margin:0}
+.hero{padding:56px 0 56px}
+.hero h1{font-size:clamp(2.8rem,10vw,6rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);color:var(--ink)}
+.hero p{max-width:34em;margin:22px 0 0;font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:500;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{color:var(--accent)}
+section{padding:44px 0;border-top:2px solid var(--ink)}
+h2{font-size:1.9rem;font-weight:800;margin-bottom:22px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+.proj button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.proj h3{font-size:1.25rem;font-weight:500}
+.proj .tag{color:var(--muted);font-size:.9rem}
+.proj .chev{transition:transform .2s;flex:none;font-size:1.3rem;color:var(--accent)}
+.proj[data-open="true"] .chev{transform:rotate(90deg)}
+.body{display:none;padding:0 20px 20px;color:var(--muted)}
+.proj[data-open="true"] .body{display:block}
+.body p{margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:4px 10px;font-size:.92rem;color:var(--ink)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+.skills h3{font-size:1.1rem;font-weight:500;margin-bottom:10px}
+
+.theme{font:inherit;font-size:1.2rem;flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);background:var(--card);color:var(--accent);cursor:pointer}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:2px solid var(--ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.top-in{max-width:860px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:"Bricolage Grotesque",Georgia,sans-serif;font-weight:800;font-size:1.25rem;margin-right:auto}
+.top nav{display:flex;gap:4px}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500;padding:8px 12px;border-radius:8px;font-size:.95rem;white-space:nowrap}
+.top nav a:hover{background:var(--card)}
+@media (max-width:760px){.top nav{order:3;width:100%;overflow-x:auto}}
+.btn{font:inherit;font-weight:500;cursor:pointer;background:none}
+.btn.primary{background:var(--accent)}
+.btn.social{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 10px}
+.ico{width:30px;height:30px;border-radius:9px;display:inline-grid;place-items:center;flex:none}
+html{-webkit-text-size-adjust:100%}
+button,a{touch-action:manipulation}
+.btn{min-height:44px}
+.top nav a{min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:560px){.top-in{padding:8px 14px}.top nav a{padding:0 12px}main{padding:0 16px 60px}.hero{padding:36px 0 40px}.logo{font-size:1.1rem}section{padding:32px 0}h2{font-size:1.6rem}.cta{flex-direction:column}.cta .btn{width:100%;justify-content:center;text-align:center}}
+.contact{display:grid;gap:12px;margin-top:24px}
+.cc{display:flex;align-items:center;gap:16px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);min-height:72px;transition:transform .15s,border-color .15s}
+.cc:hover{border-color:var(--accent)}
+.cc:active{transform:scale(.98)}
+.cc .ico{width:48px;height:48px;border-radius:14px}
+.cc .ico svg{width:26px;height:26px}
+.cc .ct{display:flex;flex-direction:column;min-width:0;flex:1}
+.cc b{font-weight:500;font-size:1.05rem}
+.cc small{color:var(--muted);font-size:.95rem;overflow:hidden;text-overflow:ellipsis}
+.cc .go{color:var(--accent);font-size:1.6rem}
+@media (min-width:700px){.contact{grid-template-columns:repeat(3,1fr)}.cc{flex-direction:column;align-items:flex-start}.cc .go{display:none}}
+[hidden]{display:none!important}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+:root[data-theme="dark"] body{background:linear-gradient(#070b1d,#101a3d 60%,#1d1447) fixed}
+:root[data-theme="dark"] body::after{display:none}
+:root[data-theme="light"] #stars{display:none}
+.top nav a[aria-current="page"]{background:var(--card);box-shadow:inset 0 -3px var(--accent)}
+.hero .serv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:44px}
+.serv>div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.serv h3{font-size:1.1rem;font-weight:500;margin-bottom:6px}
+.hero .serv p{margin:0;max-width:none;font-size:.95rem}
+.note{margin-top:30px;padding:20px;border:2px dashed var(--line);border-radius:10px}
+.note h3{font-size:1.2rem;font-weight:500;margin-bottom:6px}
+.note p{margin:0;color:var(--muted)}
+.steps{padding-left:22px;margin:0;color:var(--muted)}
+.steps li{margin-bottom:10px}
+footer{padding-top:30px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chev{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<header class="top"><div class="top-in">
+  <a class="logo" href="#bosh" aria-label="Bosh sahifa"><svg viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><rect width="24" height="24" rx="6" fill="var(--accent)"/><g fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8 4.5 12 9 16"/><path d="M15 8l4.5 4-4.5 4"/><path d="M13.3 6.5 10.7 17.5"/></g></svg>Abdulaziz</a>
+  <nav aria-label="Asosiy menyu"><a href="#bosh">Bosh sahifa</a><a href="#loyihalar">Loyihalarni koʻrish</a><a href="#konikmalar">Koʻnikmalarni koʻrish</a><a href="#aloqa">Aloqa</a></nav>
+  <button class="theme" id="theme" aria-label="Rangni almashtirish">◐</button>
+</div></header>
+<main>
+  <header class="hero" id="bosh">
+    <h1>Abdulaziz <span>Voxidov</span></h1>
+    <p>Men veb va mobil ilovalar yarataman. Murakkab gʻoyani oddiy, tez va ishonchli mahsulotga aylantirishni yaxshi koʻraman.</p>
+    <div class="serv">
+      <div><h3>Hisob-kitob ilovalari</h3><p>Qarz daftari, kassa, ombor va hisobot yuritadigan ilovalar.</p></div>
+      <div><h3>Boshqaruv tizimlari</h3><p>Zal, stadion yoki doʻkon ishini bir joydan boshqarish uchun sayt.</p></div>
+      <div><h3>Telefonga mos saytlar</h3><p>Telefonda ham, kompyuterda ham qulay ishlaydigan veb ilovalar.</p></div>
+    </div>
+  </header>
+
+  <section id="loyihalar">
+    <h2>Loyihalar</h2>
+    <div class="proj" data-open="true">
+      <button aria-expanded="true"><span><h3>Zaprafka uchun qarz daftar</h3><span class="tag">Qarz hisobi</span></span><span class="chev" aria-hidden="true">›</span></button>
+      <div class="body">
+        <p>Zapravkadagi qarzdorlarni yuritish ilovasi: kim qancha qarz olgan, muddati oʻtganlar, yopilgan qarzlar va kunlar boʻyicha hisobot. Maʼlumotlar telefonda saqlanadi, zaxira nusxa olish mumkin.</p>
+        <ul class="chips"><li>Veb ilova</li><li>GitHub Pages</li></ul>
+        <p style="margin-top:10px"><a href="https://vabdulaziz389-cmd.github.io/-qarz_daftari/" target="_blank" rel="noopener">Saytni ochish</a></p>
+      </div>
+    </div>
+    <div class="proj" data-open="true">
+      <button aria-expanded="true"><span><h3>Acsesuar pro</h3><span class="tag">Doʻkon hisobi</span></span><span class="chev" aria-hidden="true">›</span></button>
+      <div class="body">
+        <p>Aksessuar doʻkoni uchun sotuv, ombor va hisobotni yuritadigan tizim. Mahsulot kodi, tan narxi va sotuv narxi kiritiladi, hisobotni ulashish va chop etish mumkin.</p>
+        <ul class="chips"><li>Veb ilova</li><li>GitHub Pages</li></ul>
+        <p style="margin-top:10px"><a href="https://vabdulaziz389-cmd.github.io/Acsesuar_uz/" target="_blank" rel="noopener">Saytni ochish</a></p>
+      </div>
+    </div>
+    <div class="proj" data-open="true">
+      <button aria-expanded="true"><span><h3>Biliard uz</h3><span class="tag">Biliard zali</span></span><span class="chev" aria-hidden="true">›</span></button>
+      <div class="body">
+        <p>Biliard zali uchun hisob-kitob tizimi.</p>
+        <ul class="chips"><li>Veb ilova</li><li>GitHub Pages</li></ul>
+        <p style="margin-top:10px"><a href="https://vabdulaziz389-cmd.github.io/biliar_uzz/" target="_blank" rel="noopener">Saytni ochish</a></p>
+      </div>
+    </div>
+    <div class="proj" data-open="true">
+      <button aria-expanded="true"><span><h3>Stadion Uz</h3><span class="tag">Stadion</span></span><span class="chev" aria-hidden="true">›</span></button>
+      <div class="body">
+        <p>Stadionni boshqarish uchun veb ilova.</p>
+        <ul class="chips"><li>Veb ilova</li><li>GitHub Pages</li></ul>
+        <p style="margin-top:10px"><a href="https://vabdulaziz389-cmd.github.io/Stadion_uzz/" target="_blank" rel="noopener">Saytni ochish</a></p>
+      </div>
+    </div>
+    <div class="note">
+      <h3>Sizga ham shunday ilova kerakmi?</h3>
+      <p>Nima kerakligini yozing yoki qoʻngʻiroq qiling, birga hal qilamiz.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://t.me/abdulaziz_voxidov" target="_blank" rel="noopener">Telegramʼda yozish</a>
+        <a class="btn ghost" href="tel:+998955558134">Qoʻngʻiroq qilish</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="konikmalar">
+    <h2>Koʻnikmalar</h2>
+    <div class="skills">
+      <div><h3>Frontend</h3><ul class="chips"><li>HTML / CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li></ul></div>
+      <div><h3>Backend</h3><ul class="chips"><li>Node.js</li><li>Python</li><li>REST API</li><li>PostgreSQL</li></ul></div>
+      <div><h3>Vositalar</h3><ul class="chips"><li>Git</li><li>Docker</li><li>Linux</li><li>Figma</li></ul></div>
+    </div>
+    <h2 style="margin-top:40px">Qanday ishlayman</h2>
+    <ol class="steps">
+      <li>Nima kerakligini birga aniqlaymiz.</li>
+      <li>Ilovani yasab, sizga koʻrsataman.</li>
+      <li>Fikringizga qarab tuzataman va topshiraman.</li>
+    </ol>
+  </section>
+
+      <section id="aloqa">
+    <h2>Aloqa</h2>
+    <p>Yangi loyiha yoki ish taklifi boʻlsa, qoʻngʻiroq qiling yoki yozing.</p>
+    <div class="contact">
+      <a class="cc" href="tel:+998955558134"><span class="ico" style="background:#25a85a"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><span class="ct"><b>Qoʻngʻiroq qilish</b><small>+998 95 555 81 34</small></span><span class="go" aria-hidden="true">›</span></a>
+      <a class="cc" href="https://t.me/abdulaziz_voxidov" target="_blank" rel="noopener"><span class="ico" style="background:#229ed9"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.2-.2 1.4l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-14.2c.3-1.2-.4-1.8-1.5-1.3z"/></svg></span><span class="ct"><b>Telegram</b><small>@abdulaziz_voxidov</small></span><span class="go" aria-hidden="true">›</span></a>
+      <a class="cc" href="https://instagram.com/voxidov_7oo" target="_blank" rel="noopener"><span class="ico" style="background:linear-gradient(45deg,#f9a825,#e1306c 55%,#833ab4)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span><span class="ct"><b>Instagram</b><small>@voxidov_7oo</small></span><span class="go" aria-hidden="true">›</span></a>
+    </div>
+    <p style="margin-top:22px">Nusxalab olish uchun:</p>
+    <div class="cta">
+      <button class="btn ghost" data-copy="+998955558134">Raqamni nusxalash</button>
+      <button class="btn ghost" data-copy="@abdulaziz_voxidov">Telegram nomini nusxalash</button>
+    </div>
+  </section>
+
+  
+</main>
+<script>
+var $=function(i){return document.getElementById(i)};
+$('theme').addEventListener('click',function(){
+  var r=document.documentElement,dark=r.getAttribute('data-theme')==='dark'||(r.getAttribute('data-theme')!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches);
+  r.setAttribute('data-theme',dark?'light':'dark');
+});
+document.querySelectorAll('.proj button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var p=b.parentElement,open=p.getAttribute('data-open')==='true';
+    p.setAttribute('data-open',String(!open));
+    b.setAttribute('aria-expanded',String(!open));
+  });
+});
+function fb(t){var a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy'),o=b.textContent;
+    function done(){b.textContent='Nusxalandi';setTimeout(function(){b.textContent=o},1500)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fb(t);done()})}else{fb(t);done()}
+  });
+});
+var views=['bosh','loyihalar','konikmalar','aloqa'];
+function route(){show(location.hash.replace('#',''))}
+function show(h){
+  if(views.indexOf(h)<0)h='bosh';
+  views.forEach(function(v){var e=document.getElementById(v);if(e)e.hidden=(v!==h)});
+  document.querySelectorAll('.top nav a').forEach(function(a){
+    if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+  });
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+show('bosh');
+try{history.replaceState(null,'','#bosh')}catch(e){}
+document.querySelectorAll('.top a').forEach(function(a){a.addEventListener('click',function(){show(a.getAttribute('href').slice(1))})});
+(function(){
+  var c=document.getElementById('stars'),x=c.getContext('2d'),S=[],W,H,dpr=window.devicePixelRatio||1,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);S=[];
+    var n=Math.min(160,Math.round(W*H/9000));
+    for(var i=0;i<n;i++)S.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.3,p:Math.random()*6.28,s:Math.random()*.02+.005});}
+  function draw(){x.clearRect(0,0,W,H);
+    S.forEach(function(t){t.p+=t.s;x.globalAlpha=reduce?.8:.45+.45*Math.sin(t.p);x.fillStyle='#fff';x.beginPath();x.arc(t.x,t.y,t.r,0,6.283);x.fill();});
+    if(!reduce)requestAnimationFrame(draw);}
+  size();draw();
+  addEventListener('resize',function(){size();if(reduce)draw();});
+})();
+</script>
+</body>
+</html>
